@@ -2,16 +2,37 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 /* eslint semi: ["error", "never"] */
 import Vue from 'vue'
-import router from './router'
+import VueRouter from 'vue-router'
 import App from './components/App'
+import { firebaseApp } from './firebaseApp'
 
-Vue.config.productionTip = false
+Vue.use(VueRouter)
+/* eslint-disable */
+import store from './store'
 
-/* eslint-disable no-new */
+import Dashboard from './components/Dashboard.vue'
+import Signin from './components/Signin.vue'
+
+const router = new VueRouter({
+  mode: 'history',
+  routes: [
+    { path: '/dashboard', component: Dashboard },
+    { path: '/signin', component: Signin }
+  ]
+})
+
+firebaseApp.auth().onAuthStateChanged(user => {
+  if (user) {
+    store.dispatch('signIn', user);
+    router.push('/dashboard');
+  } else {
+    router.replace('/signin');
+  }
+});
+
 new Vue({
   el: '#app',
-  render: h => h(App),
   router,
-  // components: { App },
-  // template: '<App/>',
+  store,
+  render: h => h(App),
 })

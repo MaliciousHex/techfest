@@ -1,5 +1,9 @@
 <template>
     <div id="app">
-        App Component
+       <router-view></router-view>
     </div>
 </template>
+
+<style lang="scss" scoped>
+@import "../assets/scss/_main.scss";
+</style>
