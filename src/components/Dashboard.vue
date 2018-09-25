@@ -1,13 +1,19 @@
+/* eslint-disable */
 <template>
     <div>
         <h3>Event Dashboard</h3>
         <button class="btn btn-danger btn-sm" @click="signOut">Sign Out</button>
-        {{$store.state.user}}
+        <hr>
+        <AddEvent/>
+        <hr>
+        {{$store.state}}
     </div>
 </template>
 
 <script>
+/* eslint-disable */
 import { firebaseApp } from '../firebaseApp';
+import AddEvent from './AddEvent.vue';
 
 export default {
   methods: {
@@ -16,5 +22,9 @@ export default {
       firebaseApp.auth().signOut();
     },
   },
+  components: {
+    AddEvent
+  },
 };
 </script>
+

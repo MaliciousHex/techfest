@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <div id="app">
        <router-view></router-view>
@@ -7,3 +8,4 @@
 <style lang="scss" scoped>
 @import "../assets/scss/_main.scss";
 </style>
+
