@@ -1,8 +1,8 @@
 /* eslint-disable */
 <template>
   <div class= "">
-    <h4>Add an Event</h4>
-    <div class="form">
+    <h4>Add an Event <input type="checkbox" v-model="showForm"></h4>
+    <div class="form" v-if="showForm">
       <div class="form-group">
         <label>Title</label>
         <input type="text" class="form-control" v-model="event.title">
@@ -37,7 +37,8 @@
           date: '',
           location: '',
           email: '',
-        }
+        },
+        showForm:false 
       }
     },
     methods: {
@@ -45,6 +46,6 @@
         this.event.email = this.$store.state.user.email;
         eventsRef.push(this.event);
       }
-    }
+    },
   } 
 </script>
