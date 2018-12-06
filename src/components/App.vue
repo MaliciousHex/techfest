@@ -1,6 +1,6 @@
 /* eslint-disable */
 <template>
-    <div id="app">
+    <div id="app" class="container-fluid app">
        <router-view></router-view>
     </div>
 </template>

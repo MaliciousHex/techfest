@@ -34,8 +34,14 @@ a {
   }
 }
 
+ul,
 li {
   list-style: none;
+}
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .app {
@@ -44,6 +50,24 @@ li {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3350;
+  padding-top: 5 rem;
+  background-color: $color-secondary;
+  min-height: 1280px;
+}
+
+.form {
   padding-left: 10%;
   padding-right: 10%;
+  text-align: left;
+
+  input {
+    width: 100%;
+  }
+}
+
+.event-card {
+  border: 2px solid #2c3e50;
+  margin-top: 2rem;
+  border-radius: 4px;
+  font-weight: 500;
 }

@@ -12,6 +12,14 @@
 </div>
 </template>
 
+<style lang="scss" scoped>
+@import "../assets/scss/_main.scss";
+
+.event-card{
+  background-color: $color-primary;
+}
+</style>
+
 <script>/* eslint-disable */
 export default {
   props: ['event']
